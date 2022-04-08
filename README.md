@@ -20,13 +20,13 @@ You can use it for immediate operation through the docker image.
 ```
 $ docker run -d -p 8080:8080 \
              -e "VUE_APP_CONNECT_SERVERS=http://connect:8083,http://connect2:8083" \
-             officialkakao/kafka-connect-web
+             officialkakao/kafka-connect-web:latest
 ```
 
 ### Build & Run from source
 
 ```
-$ git clone https://github.com/kakaocorp/kafka-connect-web.git
+$ git clone https://github.com/kakao/kafka-connect-web.git
 $ cd kafka-connect-web
 $ export VUE_APP_CONNECT_SERVERS=http://connect:8083,http://connect2:8083
 $ npm run build
