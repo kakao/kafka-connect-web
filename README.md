@@ -15,6 +15,17 @@ You can use it for immediate operation through the docker image.
 - Modify, delete source/sink connectors
 - Look up connector plugins
 
+## Preset CORS config in connect-distributed.properties
+
+To allow cross origin requests to the Kafka Connect REST API add:
+
+```
+bootstrap.servers=your-bootstrap-servers:9092
+...
+access.control.allow.origin=*
+access.control.allow.methods=GET,OPTIONS,HEAD,POST,PUT,DELETE
+```
+
 ## Quickstart with docker image
 
 ```
