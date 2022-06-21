@@ -17,9 +17,9 @@
     "vue-router": "3.0.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-babel": "^5.0.6",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "^4.5.18",
+    "@vue/cli-service": "^5.0.6",
     "ansi-regex": ">=5.0.1",
     "async": ">=2.6.4",
     "babel-eslint": "^10.1.0",
