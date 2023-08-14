@@ -9,12 +9,12 @@ import ConnectStatus from './components/ConnectStatus.vue';
 import ConnectWebHome from './components/ConnectWebHome.vue';
 import axios from 'axios';
 
-const username = process.env.VUE_APP_AUTH_USERNAME;
-const password = process.env.VUE_APP_AUTH_PASSWORD;
-if (username && password) {
-    const token = window.btoa(`${username}:${password}`);
-    axios.defaults.headers.common['Authorization'] = `Basic ${token}`;
-}
+const username = process.env.VUE_APP_AUTH_USERNAME != null ?
+    process.env.VUE_APP_AUTH_USERNAME : "VUE_APP_AUTH_USERNAME_DOCKER_ENV";
+const password = process.env.VUE_APP_AUTH_PASSWORD != null ?
+    process.env.VUE_APP_AUTH_PASSWORD : "VUE_APP_AUTH_PASSWORD_DOCKER_ENV";
+const token = window.btoa(`${username}:${password}`);
+axios.defaults.headers.common['Authorization'] = `Basic ${token}`;
 
 Vue.use(VueRouter);
 
