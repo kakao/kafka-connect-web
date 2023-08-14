@@ -55,7 +55,7 @@ export VUE_APP_AUTH_PASSWORD={password}
 npm run serve
 ```
 
-For avoiding CORS error, it is recommended to set CORS config in reverse proxy rather than in connect-distributed.properties.
+To prevent CORS errors, you should configure the CORS settings in the reverse proxy instead of the connect-distributed.properties file.
 ```
 add_header 'Access-Control-Allow-Origin' '*';
 add_header 'Access-Control-Allow-Methods' 'GET,OPTIONS,HEAD,POST,PUT,DELETE';
