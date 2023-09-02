@@ -55,14 +55,16 @@ $ export VUE_APP_AUTH_PASSWORD={password}
 $ npm run serve
 ```
 
-To prevent CORS errors, you should configure the CORS settings in the reverse proxy instead of the connect-distributed.properties file.  
-For example, if you use NGINX reverse proxy, you can allow cross origin requests by adding the `add_header` as shown below.
+An additional header `access.control.allow.headers` is necessary when implementing HTTP basic authentication, but this is not supported in `connect-distributed.properties` file. As a workaround, you can preset CORS config in a reverse proxy server.  
+For example, you can set up NGINX reverse proxy and allow cross origin requests by adding configurations into your nginx conf file.
 ```
 add_header 'Access-Control-Allow-Origin' '*';
 add_header 'Access-Control-Allow-Methods' 'GET,OPTIONS,HEAD,POST,PUT,DELETE';
 add_header 'Access-Control-Allow-Headers' 'origin,content-type,accept,authorization';
 ```
-The `Access-Control-Allow-Headers` is also necessary when implementing basic authentication.
+※ **NOTE**: If you are using multiple Kafka Connect application servers, each server is supposed to share the same username and password.
+Failure to do so may lead to unauthorized error.
+
 ## License
 
 This software is licensed under the [Apache 2 license](LICENSE), quoted below.
