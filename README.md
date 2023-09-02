@@ -55,7 +55,7 @@ $ export VUE_APP_AUTH_PASSWORD={password}
 $ npm run serve
 ```
 
-An additional header `access.control.allow.headers` is necessary when implementing HTTP basic authentication, but this is not supported in `connect-distributed.properties` file. As a workaround, you can preset CORS config in a reverse proxy server.  
+An additional header `access.control.allow.headers` is necessary when implementing HTTP basic authentication, but this is not supported in `connect-distributed.properties` file. As a workaround, you should preset CORS config in a reverse proxy server.  
 For example, you can set up NGINX reverse proxy and allow cross origin requests by adding configurations into your nginx conf file.
 ```
 add_header 'Access-Control-Allow-Origin' '*';
